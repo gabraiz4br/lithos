@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Save tool – L.I.T.H.O.S.</title>
+<meta name="description" content="L.I.T.H.O.S. – a black-and-white pixel roguelike space shooter.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var L={"en": "save.html", "pt": "pt/save.html", "es": "es/save.html", "fr": "fr/save.html"};var cur="en";var s=localStorage.getItem('siteLang');if(s&&s!==cur&&L[s]&&location.hash!=='#stay'){location.replace(L[s]);}}catch(e){}})();</script>
+</head><body>
+<canvas id="bg"></canvas>
+<a class="itchbar" href="https://gabraiz4.itch.io/lithos">★ L.I.T.H.O.S. is on itch.io: download, support and comment ★</a>
+<header class="logo"><a href="index.html"><svg class="ship" viewBox="0 0 16 16" width="32" height="32" shape-rendering="crispEdges" aria-hidden="true"><path fill="#fff" d="M13 7h1v2h-1zM11 6h2v4h-2zM9 5h2v6H9zM7 4h2v8H7zM5 3h2v10H5zM3 2h2v12H3z"/></svg><span>L.I.T.H.O.S.</span></a></header>
+<div class="topbar"><div class="topin"><nav class="nav"><a href="index.html">Home</a><a href="cards.html">Cards</a><a href="enemies.html">Enemies</a><a href="lab.html">Laboratory</a><a href="veins.html">The Veins</a><a href="achievements.html">Achievements</a><a href="versions.html" class=on>Versions</a><a href="changelog.html">Changelog</a><a href="downloads.html">Downloads</a><a href="support.html">Support</a><a href="feedback.html">Feedback</a></nav><div class="tools"><span class="lang"><a href="save.html" data-l="en" class=cur title="English">EN</a><a href="pt/save.html" data-l="pt" title="Português">PT</a><a href="es/save.html" data-l="es" title="Español">ES</a><a href="fr/save.html" data-l="fr" title="Français">FR</a></span><a class="itchmini" href="https://gabraiz4.itch.io/lithos">itch.io</a></div></div></div>
+<main>
+<h1>Save tool</h1><p class="sub">move your progress</p>
+<p>Your progress (fragments, Laboratory upgrades, achievements, high score and settings) lives in your browser. All versions played <b>on this website</b> share it. Use this page to copy it to another browser or device, or to import a save code.</p>
+<p class="box">Old versions have no Save menu, so this is the way to export from them. Play them <b>on this website</b>, then come here. Games on itch.io keep their own separate save: from v0.5 use <i>Settings → Save data</i> inside the game.</p>
+<p><label for="sv-slot"><b>Save slot</b></label> <select id="sv-slot"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></p>
+<p class="mid">Slots 2 and 3 exist from v0.6. Older versions only have slot 1.</p>
+<h2>1. Export</h2>
+<p id="sv-none" class="mid" style="display:none">No save found in this browser yet. Play a version on this site first.</p>
+<textarea id="sv-out" rows="5" readonly></textarea>
+<div class="row"><button id="sv-copy" type="button">COPY CODE</button><button id="sv-dl" type="button">DOWNLOAD FILE</button></div>
+<h2>2. Import</h2>
+<p>Paste a save code (or the contents of a save file) here. <b>This replaces the save in this browser.</b></p>
+<textarea id="sv-in" rows="5"></textarea>
+<div class="row"><button id="sv-imp" type="button">IMPORT</button><button id="sv-file" type="button">LOAD FROM FILE</button></div>
+<input type="file" id="sv-f" accept=".txt,.json,.lithos" style="display:none">
+<p id="sv-msg" class="box" style="display:none"></p>
+<h2>Then, in the game</h2>
+<ul><li>To use the code in another place: open v0.5 or later, go to <b>Settings → Save data → Import save</b> and press <b>Ctrl+V</b>.</li>
+<li>To bring a save from v0.5 into this site: in the game go to <b>Settings → Save data → Copy save code</b>, then paste it in box 2 above.</li></ul>
+<script>
+(function(){
+var K='nave_cfg',slotSel=document.getElementById('sv-slot'),out=document.getElementById('sv-out'),inp=document.getElementById('sv-in'),msg=document.getElementById('sv-msg');
+function say(t){msg.textContent=t;msg.style.display='block'}
+function enc(s){return 'LITHOS1:'+btoa(unescape(encodeURIComponent(s)))}
+function dec(c){c=c.trim();if(c.indexOf('LITHOS1:')===0)c=decodeURIComponent(escape(atob(c.slice(8).replace(/\s+/g,''))));return JSON.parse(c)}
+function key(){var n=+slotSel.value;return n>1?'nave_cfg_'+n:'nave_cfg'}
+function refresh(){K=key();var raw=null;try{raw=localStorage.getItem(K)}catch(e){}if(raw){out.value=enc(raw);document.getElementById('sv-none').style.display='none'}else{out.value='';document.getElementById('sv-none').style.display='block'}}
+slotSel.onchange=refresh;refresh();
+document.getElementById('sv-copy').onclick=function(){if(!out.value)return;out.select();try{document.execCommand('copy');say("Copied!")}catch(e){}};
+document.getElementById('sv-dl').onclick=function(){if(!out.value)return;var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([out.value],{type:'text/plain'}));a.download='lithos-save.txt';a.click()};
+document.getElementById('sv-imp').onclick=function(){try{var o=dec(inp.value);if(!o||typeof o!=='object')throw 0;localStorage.setItem(K,JSON.stringify(o));say("Save imported! Open any version on this site to continue.");out.value=enc(JSON.stringify(o));document.getElementById('sv-none').style.display='none'}catch(e){say("That code is not valid. Nothing was changed.")}};
+document.getElementById('sv-file').onclick=function(){document.getElementById('sv-f').click()};
+document.getElementById('sv-f').onchange=function(){var f=this.files[0];if(!f)return;var r=new FileReader();r.onload=function(){inp.value=r.result};r.readAsText(f)};
+})();
+</script>
+<footer><a class="itchbtn" href="https://gabraiz4.itch.io/lithos">GET IT ON ITCH.IO</a><p>Made by gabraiz4 · <a href="https://gabraiz4.itch.io/lithos">gabraiz4.itch.io/lithos</a></p></footer>
+</main>
+<script>document.querySelectorAll('.lang a').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('siteLang',a.dataset.l)}catch(e){}})});</script>
+<script src="bg.js"></script>
+</body></html>

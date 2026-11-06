@@ -1,0 +1,9 @@
+Coloque aqui, na pasta lithos-site\downloads, os zips gerados pelo GERAR-TODOS.bat:
+  LITHOS-BETA-exe.zip
+  LITHOS-v0.1-exe.zip
+  LITHOS-v0.2-exe.zip
+  LITHOS-v0.3-exe.zip
+  LITHOS-v0.4-exe.zip
+  LITHOS-v0.5-exe.zip
+(Os nomes precisam ser exatamente esses.)
+Depois arraste a pasta lithos-site no Netlify.

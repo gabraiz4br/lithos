@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Enemies – L.I.T.H.O.S.</title>
+<meta name="description" content="Asteroid types and boss patterns in L.I.T.H.O.S., with tips.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var L={"en": "enemies.html", "pt": "pt/enemies.html", "es": "es/enemies.html", "fr": "fr/enemies.html"};var cur="en";var s=localStorage.getItem('siteLang');if(s&&s!==cur&&L[s]&&location.hash!=='#stay'){location.replace(L[s]);}}catch(e){}})();</script>
+</head><body>
+<canvas id="bg"></canvas>
+<a class="itchbar" href="https://gabraiz4.itch.io/lithos">★ L.I.T.H.O.S. is on itch.io: download, support and comment ★</a>
+<header class="logo"><a href="index.html"><svg class="ship" viewBox="0 0 16 16" width="32" height="32" shape-rendering="crispEdges" aria-hidden="true"><path fill="#fff" d="M13 7h1v2h-1zM11 6h2v4h-2zM9 5h2v6H9zM7 4h2v8H7zM5 3h2v10H5zM3 2h2v12H3z"/></svg><span>L.I.T.H.O.S.</span></a></header>
+<div class="topbar"><div class="topin"><nav class="nav"><a href="index.html">Home</a><a href="cards.html">Cards</a><a href="enemies.html" class=on>Enemies</a><a href="lab.html">Laboratory</a><a href="veins.html">The Veins</a><a href="achievements.html">Achievements</a><a href="versions.html">Versions</a><a href="changelog.html">Changelog</a><a href="downloads.html">Downloads</a><a href="support.html">Support</a><a href="feedback.html">Feedback</a></nav><div class="tools"><span class="lang"><a href="enemies.html" data-l="en" class=cur title="English">EN</a><a href="pt/enemies.html" data-l="pt" title="Português">PT</a><a href="es/enemies.html" data-l="es" title="Español">ES</a><a href="fr/enemies.html" data-l="fr" title="Français">FR</a></span><a class="itchmini" href="https://gabraiz4.itch.io/lithos">itch.io</a></div></div></div>
+<main>
+<h1>Enemies</h1><p class="sub">asteroids and bosses</p>
+<p>Every asteroid has a health bar. Touching one hurts your ship. Waves get faster and tougher as you go, and walls make asteroids bounce.</p>
+<h2>Asteroids</h2><div class="card cardrow"><div class="aart"><img class="eimg" src="img/enemies/small.png" alt="small" width="60"><img class="eimg" src="img/enemies/medium.png" alt="medium" width="72"><img class="eimg" src="img/enemies/large.png" alt="large" width="96"></div><div><h3 class="bname">NORMAL ASTEROID</h3><p>Small, medium, large. They split.</p><p class="tip">Tip: Kill the small ones first if you are surrounded.</p></div></div>
+<div class="card cardrow"><div class="aart"><img class="eimg" src="img/enemies/dart.png" alt="dart" width="80"></div><div><h3 class="bname">FAST DART (WAVE 12+)</h3><p>Arrow shaped. Fast but fragile.</p><p class="tip">Tip: Fast Laser and Homing make them easy. They run straight at you, so keep distance.</p></div></div>
+<div class="card cardrow"><div class="aart"><img class="eimg" src="img/enemies/armored.png" alt="armored" width="80"></div><div><h3 class="bname">ARMORED (WAVE 22+)</h3><p>Double outline. Slow, very tough.</p><p class="tip">Tip: Use Damage, Pierce and Lightning. Do not waste fire on small ones while it chases you.</p></div></div>
+<div class="card cardrow"><div class="aart"><img class="eimg" src="img/enemies/splitter.png" alt="splitter" width="80"></div><div><h3 class="bname">SPLITTER (WAVE 18+)</h3><p>Cross inside. Breaks into 3 pieces.</p><p class="tip">Tip: Explosive cleans up the pieces. Kill it when it is far from you.</p></div></div>
+
+<h2>Bosses</h2>
+<p>A boss arrives every 30 waves. Each one has a different attack pattern, and they get angry below half health. Beating a boss gives you better card offers. The image on the left is the boss, and the diagram shows how its bullets move toward your ship.</p>
+<div class="card r2 cardrow big"><div class="eart"><img class="eimg" src="img/enemies/boss0.png" alt="boss0" width="240"><p class="cap">BOSS 1</p></div><div><h3 class="bname">THE RING</h3><p>Rings of bullets. Always the first boss (wave 30).</p><p class="tip">Tip: Keep moving along the edges and slip through the gaps in the ring. It calls fast asteroids now and then. Slow Time helps a lot.</p></div></div>
+<div class="card r2 cardrow big"><div class="eart"><img class="eimg" src="img/enemies/boss1.png" alt="boss1" width="240"><p class="cap">BOSS 2</p></div><div><h3 class="bname">THE SNIPER</h3><p>Fires aimed fans of bullets at you and an occasional ring.</p><p class="tip">Tip: Do not run in a straight line: change direction after each burst. Stay at a distance and keep shooting.</p></div></div>
+<div class="card r2 cardrow big"><div class="eart"><img class="eimg" src="img/enemies/boss2.png" alt="boss2" width="240"><p class="cap">BOSS 3</p></div><div><h3 class="bname">THE SPIRAL</h3><p>Sprays two arms of bullets that spin, then pauses.</p><p class="tip">Tip: Orbit slowly in the same direction as the spiral. The pauses are your chance to deal damage.</p></div></div>
+<div class="card r2 cardrow big"><div class="eart"><img class="eimg" src="img/enemies/boss3.png" alt="boss3" width="240"><p class="cap">BOSS 4</p></div><div><h3 class="bname">THE CHARGER</h3><p>Flashes to warn you, then dashes at your ship, and fires a ring when it stops.</p><p class="tip">Tip: Move sideways when it flashes. After the dash it is open: hit it now.</p></div></div>
+<div class="card r2 cardrow big"><div class="eart"><img class="eimg" src="img/enemies/boss4.png" alt="boss4" width="240"><p class="cap">BOSS 5</p></div><div><h3 class="bname">THE SUMMONER</h3><p>Calls many small asteroids and fires slow rings.</p><p class="tip">Tip: Kill the small ones quickly with Pierce or Explosive so the screen does not fill up.</p></div></div>
+
+<footer><a class="itchbtn" href="https://gabraiz4.itch.io/lithos">GET IT ON ITCH.IO</a><p>Made by gabraiz4 · <a href="https://gabraiz4.itch.io/lithos">gabraiz4.itch.io/lithos</a></p></footer>
+</main>
+<script>document.querySelectorAll('.lang a').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('siteLang',a.dataset.l)}catch(e){}})});</script>
+<script src="bg.js"></script>
+</body></html>

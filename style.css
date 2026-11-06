@@ -1,0 +1,122 @@
+
+:root{--bg:#000;--fg:#fff;--mid:#b0b0b0;--line:#3a3a3a;--dim:#161616;--c0:#9a9a9a;--c1:#5b8dff;--c2:#b574ff;--c3:#ffd23c}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:22px/1.45 "VT323","Courier New",monospace;position:relative}
+#bg{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;image-rendering:pixelated;opacity:.55;pointer-events:none}
+.itchbar,main{position:relative;z-index:1}
+.itchbar{display:block;background:var(--fg);color:var(--bg);text-align:center;text-decoration:none;font:11px/1 "Press Start 2P","Courier New",monospace;padding:12px 8px;letter-spacing:1px}
+.itchbar:hover{background:#d8d8d8;color:var(--bg)}
+main{max-width:820px;margin:0 auto;padding:22px 18px 70px}
+h1,h2,h3,.px{font-family:"Press Start 2P","Courier New",monospace;font-weight:400}
+h1{font-size:clamp(22px,6vw,40px);letter-spacing:3px;margin:18px 0 10px;text-align:center;text-shadow:4px 4px 0 #444;line-height:1.3}
+.sub{text-align:center;color:var(--mid);margin:0 0 26px;font-size:24px}
+h2{font-size:14px;margin:44px 0 16px;letter-spacing:2px;text-transform:uppercase;line-height:1.5}
+h2::before{content:"> ";color:var(--mid)}
+h2::after{content:"";display:block;height:4px;margin-top:10px;background:repeating-linear-gradient(90deg,var(--fg) 0 8px,transparent 8px 12px)}
+h3{font-size:12px;margin:0 0 8px;line-height:1.5}
+p{margin:0 0 14px}
+a{color:var(--fg)}a:hover{background:var(--fg);color:var(--bg)}
+.logo{text-align:center;margin-top:4px}
+.logo a{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font:14px/1 "Press Start 2P",monospace;letter-spacing:3px}
+.logo a:hover{background:none;color:var(--fg)}
+.ship{animation:spin 6s steps(8) infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.nav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 6px;margin:18px 0 26px}
+.nav a{font:9px/1 "Press Start 2P",monospace;text-decoration:none;color:var(--mid);padding:8px 9px;border:2px solid var(--line)}
+.nav a:hover{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.nav a.on{color:var(--fg);border-color:var(--fg)}
+.btn,.big,.itchbtn,button{display:block;text-align:center;font:13px/1.4 "Press Start 2P",monospace;letter-spacing:1px;text-decoration:none;color:var(--bg);background:var(--fg);border:0;padding:16px 18px;margin:16px 0;box-shadow:6px 6px 0 #555;cursor:pointer;transition:transform .05s}
+.big:hover,.itchbtn:hover,button:hover,.btn:hover{background:var(--fg);color:var(--bg);transform:translate(3px,3px);box-shadow:3px 3px 0 #555}
+.big.alt,.btn.alt{background:var(--bg);color:var(--fg);border:3px solid var(--fg);box-shadow:6px 6px 0 #555}
+.big.alt:hover,.btn.alt:hover{background:var(--fg);color:var(--bg)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px}
+@media(max-width:640px){.row{grid-template-columns:1fr}}
+.panel,.card,.box{border:3px solid var(--line);background:rgba(0,0,0,.78);padding:14px 18px;margin:0 0 16px;position:relative}
+.panel::before,.card::before{content:"";position:absolute;top:-3px;left:-3px;width:10px;height:10px;background:var(--bg);border-right:3px solid var(--fg);border-bottom:3px solid var(--fg);opacity:.6}
+.card.r1{border-color:var(--c1)}.card.r2{border-color:var(--c2)}.card.r3{border-color:var(--c3)}.card.r0{border-color:#6a6a6a}
+.card .tag{font:9px/1 "Press Start 2P",monospace}.r0 .tag{color:var(--c0)}.r1 .tag{color:var(--c1)}.r2 .tag{color:var(--c2)}.r3 .tag{color:var(--c3)}
+.card p{margin:6px 0}.tip{color:var(--mid);font-size:20px}
+.box{border-style:dashed;color:var(--mid)}
+ul.links{list-style:none;padding:0;margin:0}
+ul.links li{padding:7px 0 7px 22px;border-bottom:2px dotted var(--line);position:relative}
+ul.links li::before{content:"▶";position:absolute;left:0;font-size:14px;top:11px;color:var(--mid)}
+ul.links span,.mid{color:var(--mid);font-size:20px}
+ul,ol{padding-left:24px}li{margin:3px 0}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.gal img{width:100%;display:block;image-rendering:pixelated;border:3px solid var(--line)}
+.gal a:hover{background:none}.gal a:hover img{border-color:var(--fg)}
+.ver{padding:12px 0;border-bottom:2px dotted var(--line)}.ver b{font:12px "Press Start 2P",monospace}.ver small{color:var(--mid);display:block;font-size:20px;margin-top:4px}
+.new{background:var(--fg);color:var(--bg);padding:3px 6px;font:8px "Press Start 2P",monospace;margin-left:8px;vertical-align:middle}
+table{border-collapse:collapse;width:100%;margin:8px 0 18px;background:rgba(0,0,0,.7)}
+td,th{border:2px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{color:var(--mid);font:9px "Press Start 2P",monospace;font-weight:400}
+code{background:var(--dim);border:1px solid var(--line);padding:0 6px}
+label{display:block;margin:16px 0 4px;color:var(--mid)}
+input,select,textarea{width:100%;background:#000;color:#fff;border:3px solid var(--fg);padding:8px;font:inherit}
+.bar{height:16px;border:3px solid var(--fg);margin:6px 0 16px}.bar i{display:block;height:100%;background:var(--fg)}
+footer{margin-top:56px;text-align:center;color:var(--mid)}
+footer .itchbtn{max-width:360px;margin:0 auto 16px}
+.hero{text-align:center;padding:10px 0 6px}
+.hero .ship{width:64px;height:64px;margin:0 auto 6px;display:block}
+@media(prefers-reduced-motion:reduce){.ship{animation:none}}
+
+.cardrow{display:flex;gap:16px;align-items:flex-start}
+.cardrow>div{min-width:0}
+.cicon{flex:0 0 72px;width:72px;height:72px;image-rendering:pixelated;border:3px solid #6a6a6a;padding:4px;background:#000;box-sizing:content-box}
+.card.r1 .cicon{border-color:var(--c1)}.card.r2 .cicon{border-color:var(--c2)}.card.r3 .cicon{border-color:var(--c3)}
+@media(max-width:520px){.cardrow{flex-direction:column}}
+.eimg{image-rendering:pixelated;display:block;max-width:100%;height:auto;border:3px solid #2a2a2a}
+.aart{display:flex;gap:8px;align-items:flex-end;flex:0 0 auto}
+.eart{flex:0 0 320px}.eart .eimg{width:320px}
+.cardrow.big{flex-wrap:wrap}
+.card.lab .tag{color:#9a9a9a}
+.bname{font-size:18px;letter-spacing:2px;margin-bottom:10px}
+.cap{font:9px 'Press Start 2P',monospace;color:#b0b0b0;margin:8px 0 0;letter-spacing:1px}
+.card.ach h3{font-size:11px}
+
+.cardrow{display:flex;gap:16px;align-items:flex-start}.cardrow>div{min-width:0}
+.cicon{flex:0 0 72px;width:72px;height:72px;image-rendering:pixelated;border:3px solid #6a6a6a;padding:4px;background:#000;box-sizing:content-box}
+.card.r1 .cicon{border-color:var(--c1)}.card.r2 .cicon{border-color:var(--c2)}.card.r3 .cicon{border-color:var(--c3)}
+@media(max-width:520px){.cardrow{flex-direction:column}}
+.eimg{image-rendering:pixelated;display:block;max-width:100%;height:auto;border:3px solid #2a2a2a}
+.aart{display:flex;gap:8px;align-items:flex-end;flex:0 0 auto}.eart{flex:0 0 240px}.eart .eimg{width:240px}.cardrow.big{flex-wrap:wrap}
+.card.lab .tag{color:#9a9a9a}
+.bname{font-size:18px;letter-spacing:2px;margin-bottom:10px;color:#b4b4b4}
+.cap{font:9px 'Press Start 2P',monospace;color:#b0b0b0;margin:8px 0 0;letter-spacing:1px}
+.card.ach h3{font-size:11px}
+/* sticky menu */
+.cardrow.big>div:last-child{flex:1 1 260px;text-align:left}.cardrow>div:last-child{text-align:left}
+
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.96);display:none;align-items:center;justify-content:center;z-index:99}
+#lb.on{display:flex}body.lbopen .topbar,body.lbopen .itchbar{visibility:hidden}main{z-index:60!important}#lb figure{margin:0;max-width:92vw;text-align:center}
+#lb img{max-width:92vw;max-height:80vh;border:2px solid #fff;display:block;margin:0 auto}
+#lb figcaption{margin-top:14px;font:11px 'Press Start 2P',monospace;color:#ccc;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+#lb figcaption #lbc{color:#fff}
+.lbn,.lbx{position:absolute;background:#000;color:#fff;border:2px solid #fff;font:24px/1 'Press Start 2P',monospace;cursor:pointer;padding:12px 16px}
+.lbn:hover,.lbx:hover{background:#fff;color:#000}.lbp{left:16px;top:50%}.lbq{right:16px;top:50%}.lbx{right:16px;top:16px;font-size:16px}
+@media(max-width:600px){.lbn{top:auto;bottom:16px}}
+
+.gal{max-width:760px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.gal figure{margin:0}.gal img{width:100%;height:auto;display:block;border:2px solid #333;image-rendering:auto}
+.gal a:hover img{border-color:#fff}.gal figcaption{font:7px/1.5 'Press Start 2P',monospace;color:#999;margin-top:5px}
+.card p{color:#b4b4b4}.card .tip{color:#8f8f8f}.card h3{color:#fff}.card h3.bname{color:#b4b4b4}
+
+.topbar{position:sticky;top:0;z-index:100;background:#000;border-bottom:3px solid var(--fg);margin:14px -16px 22px;padding:8px 16px}
+.topin{display:flex;align-items:center;gap:10px;max-width:1000px;margin:0 auto}
+.topbar .nav{flex:1;margin:0;flex-wrap:wrap;justify-content:flex-start;gap:4px;overflow:visible}
+.topbar .nav a{white-space:nowrap;padding:7px 8px;font-size:8px}
+.tools{display:flex;gap:6px;align-items:center;flex:0 0 auto}
+.lang{display:flex;gap:4px}
+.lang a,.itchmini{font:9px/1 "Press Start 2P",monospace;text-decoration:none;color:var(--mid);padding:8px 7px;border:2px solid var(--line);background:#000}
+.lang a.cur{background:var(--fg);color:#000;border-color:var(--fg)}
+.lang a:hover,.itchmini:hover{background:var(--fg);color:#000;border-color:var(--fg)}
+.itchmini{color:var(--fg);border-color:var(--fg)}
+/* hover fix: current page keeps readable colors */
+.nav a.on{background:var(--fg);color:#000;border-color:var(--fg)}
+.nav a.on:hover{background:var(--fg);color:#000}
+.logo a:hover{background:none;color:var(--fg)}
+@media(max-width:700px){.topin{flex-direction:column;align-items:stretch}.tools{justify-content:space-between}}
+textarea,select,input{max-width:100%}
+.row button{font:10px "Press Start 2P",monospace;padding:12px;border:3px solid var(--fg);background:#000;color:var(--fg);cursor:pointer}
+.row button:hover{background:var(--fg);color:#000}

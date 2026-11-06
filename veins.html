@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Veins – L.I.T.H.O.S.</title>
+<meta name="description" content="The Veins: the card unlock tree of L.I.T.H.O.S.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var L={"en": "veins.html", "pt": "pt/veins.html", "es": "es/veins.html", "fr": "fr/veins.html"};var cur="en";var s=localStorage.getItem('siteLang');if(s&&s!==cur&&L[s]&&location.hash!=='#stay'){location.replace(L[s]);}}catch(e){}})();</script>
+</head><body>
+<canvas id="bg"></canvas>
+<a class="itchbar" href="https://gabraiz4.itch.io/lithos">★ L.I.T.H.O.S. is on itch.io: download, support and comment ★</a>
+<header class="logo"><a href="index.html"><svg class="ship" viewBox="0 0 16 16" width="32" height="32" shape-rendering="crispEdges" aria-hidden="true"><path fill="#fff" d="M13 7h1v2h-1zM11 6h2v4h-2zM9 5h2v6H9zM7 4h2v8H7zM5 3h2v10H5zM3 2h2v12H3z"/></svg><span>L.I.T.H.O.S.</span></a></header>
+<div class="topbar"><div class="topin"><nav class="nav"><a href="index.html">Home</a><a href="cards.html">Cards</a><a href="enemies.html">Enemies</a><a href="lab.html">Laboratory</a><a href="veins.html" class=on>The Veins</a><a href="achievements.html">Achievements</a><a href="versions.html">Versions</a><a href="changelog.html">Changelog</a><a href="downloads.html">Downloads</a><a href="support.html">Support</a><a href="feedback.html">Feedback</a></nav><div class="tools"><span class="lang"><a href="veins.html" data-l="en" class=cur title="English">EN</a><a href="pt/veins.html" data-l="pt" title="Português">PT</a><a href="es/veins.html" data-l="es" title="Español">ES</a><a href="fr/veins.html" data-l="fr" title="Français">FR</a></span><a class="itchmini" href="https://gabraiz4.itch.io/lithos">itch.io</a></div></div></div>
+<main>
+<h1>The Veins</h1><p class="sub">the card unlock tree</p>
+<p>Since v0.6, cards are unlocked in <b>The Veins</b>, a tree you open from the main menu. It has all 23 cards, grouped in 5 veins. Each node costs fragments, the same ones you earn every run.</p>
+<h2>How it works</h2>
+<ul><li><b>Common</b> cards are always available (free).</li>
+<li><b>Rare</b> cost 40, <b>epic</b> 120 and <b>legendary</b> 300 fragments.</li>
+<li>You must unlock the previous node of the vein first.</li>
+<li>At the end of each vein, pick <b>one of two evolutions</b> for 400 fragments. They are small permanent bonuses. You need the last card of the vein first.</li>
+<li>Press <b>R</b> twice in the tree to refund everything you spent there, and try another plan.</li>
+<li>Each save has its own tree. Saves from before v0.6 start with every card already unlocked.</li></ul>
+<h2>Controls</h2>
+<p>Drag the map with the mouse. Hover a node to read it and click to unlock. With the keyboard, use the arrows and Enter. Q goes back.</p>
+<h2>The 5 veins</h2>
+<div class="card r2 vein"><h3>Cannon Vein</h3><p>Damage → Fire Rate → Fast Laser → Pierce → Multishot → Fury</p><p class="tip">Evolution (pick one):</p><ul><li><b>FAN</b>: +1 LASER PER SHOT.</li><li><b>BEAM</b>: +2 PIERCE AND +15% DAMAGE.</li></ul></div>
+<div class="card r2 vein"><h3>Hull Vein</h3><p>Health → Repair → Shield → Regen → Vampire → Pulse</p><p class="tip">Evolution (pick one):</p><ul><li><b>REFLEX</b>: +1 FREE PULSE LEVEL.</li><li><b>BARRIER</b>: +1 SHIELD EVERY WAVE.</li></ul></div>
+<div class="card r2 vein"><h3>Crystal Vein</h3><p>Ricochet → Homing → Lightning → Storm</p><p class="tip">Evolution (pick one):</p><ul><li><b>CHAIN</b>: LIGHTNING JUMPS +2 TIMES.</li><li><b>THUNDER</b>: STORM +2 FREE LEVELS.</li></ul></div>
+<div class="card r2 vein"><h3>Orbit Vein</h3><p>Thruster → Drone → Slow Time → Swarm</p><p class="tip">Evolution (pick one):</p><ul><li><b>SATELLITE</b>: +1 DRONE.</li><li><b>THRUST</b>: +15% SPEED, ASTEROIDS 8% SLOWER.</li></ul></div>
+<div class="card r2 vein"><h3>Core Vein</h3><p>Luck → Explosive → Supernova</p><p class="tip">Evolution (pick one):</p><ul><li><b>STAR</b>: SUPERNOVA CHARGES 15% FASTER.</li><li><b>FORTUNE</b>: +3 LUCK.</li></ul></div>
+
+<p class="mid">The evolutions are small bonuses to the numbers of the game, and their balance is still being tested.</p>
+<div class="gal"><figure><a href="img/shot-veins.png" target="_blank"><img src="img/shot-veins.png" alt="" loading="lazy"></a></figure></div>
+<footer><a class="itchbtn" href="https://gabraiz4.itch.io/lithos">GET IT ON ITCH.IO</a><p>Made by gabraiz4 · <a href="https://gabraiz4.itch.io/lithos">gabraiz4.itch.io/lithos</a></p></footer>
+</main>
+<script>document.querySelectorAll('.lang a').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('siteLang',a.dataset.l)}catch(e){}})});</script>
+<script src="bg.js"></script>
+</body></html>
